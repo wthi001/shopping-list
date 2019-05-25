@@ -1,6 +1,6 @@
 $(function() {
 
-('#js-shopping-list-form').submit (function(event) {
+$('#js-shopping-list-form').submit (function(event) {
   
   event.preventDefault();
   
@@ -29,7 +29,7 @@ $(function() {
 
    $('.shopping-list').on ('click','.shopping-item-delete', function(event) {
     
-   $(this).closest('li').find.remove();
+   $(this).closest('li').remove();
    
   });
 
