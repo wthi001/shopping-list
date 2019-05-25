@@ -1,13 +1,38 @@
 $(function() {
 
-('#js-shopping-list-form').submit (event=> {
+('#js-shopping-list-form').submit (function(event) {
+  
   event.preventDefault();
+  
+  const addedItem = $('#shopping-list-entry').val();
 
-('.shopping-item-toggle').on ('click', event => {
-  const checkedItem =  $(this);
+  $('.shopping-list').append(
+    `<li>
+    <span class="shopping-item">${addedItem}</span>
+    <div class="shopping-item-controls">
+      <button class="shopping-item-toggle">
+        <span class="button-label">check</span>
+      </button>
+      <button class="shopping-item-delete">
+        <span class="button-label">delete</span>
+      </button>
+    </div>`
+    </li>);
+  
+  });
+   
+   $('.shopping-list').on ('click', '.shopping-item-toggle', function(event) {
+    
+   $(this).closest('li').find('.shopping-item')toggleClass('shopping-item__checked');
+   
+  });
 
-  checkedItem.toggleClass('.shopping-item__checked')
+   $('.shopping-list').on ('click','.shopping-item-delete', function(event) {
+    
+   $(this).closest('li').find.remove();
+   
+  });
 
-}); 
 });
-})
+
+
