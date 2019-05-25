@@ -16,8 +16,8 @@ $(function() {
       <button class="shopping-item-delete">
         <span class="button-label">delete</span>
       </button>
-    </div>`
-    </li>);
+    </div>
+    </li>`);
   
   });
    
@@ -34,5 +34,3 @@ $(function() {
   });
 
 });
-
-
